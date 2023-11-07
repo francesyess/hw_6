@@ -6,6 +6,7 @@ execute:
   echo: false
 fig-width: 6.5
 fig-width: 8
+bibliography: references.bib
 ---
 
 ```{r}
@@ -14,5 +15,8 @@ library(here)
 ```
 
 ```{r}
-star <- read.csv(here("data", "star.csv"))
 ```
+star <- read.csv(here("data", "star.csv"))
+## Commit 2
+I need to cite @R and @tidyverse
+Here are a few more references for your viewing pleasure [@nese2021; @gregori2022; @kratochwill2021]
