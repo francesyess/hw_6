@@ -1,5 +1,18 @@
 ---
 title: "hw_6"
-format: html
+format: pdf
 editor: visual
+execute: 
+  echo: false
+fig-width: 6.5
+fig-width: 8
 ---
+
+```{r}
+library(here)
+
+```
+
+```{r}
+star <- read.csv(here("data", "star.csv"))
+```
