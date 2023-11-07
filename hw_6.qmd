@@ -12,23 +12,39 @@ bibliography: references.bib
 ```{r}
 #| include: false
 library(here)
+library(tidyverse)
+library(kableExtra)
 ```
 
 ```{r}
 star <- read.csv(here("data", "star.csv"))
 ```
 
-## Commit 2 
+## Commit 2
 
 I need to cite @R and @tidyverse Here are a few more references for your viewing pleasure [@nese2021; @gregori2022; @kratochwill2021]
 
-```{r}
+## Commit 3
 
+```{r}
+#| results: asis
+#| warning: false
+
+star %>% 
+  group_by(sex,frl)%>%
+  summarize(math_mean = mean(tmathss, na.rm = TRUE),
+            math_sd = sd(tmathss, na.rm = TRUE),
+            rdg_mean = mean(treadss, na.rm = TRUE),
+            rdg_sd = sd(treadss, na.rm = TRUE))%>%
+  kable(digits = 2,
+        booktabs = TRUE)
 ```
 
+The table above shows us the means and standard deviations of math and reading performance for students grouped by sex and whether they receive free/reduced price lunch.
 
+The mean of math score for boys who received free/reduced price lunch is 469.87 and the standard deviation is 46.09. Besides, they have a mean reading scores as 425.38 and the standard deviation is 26.63. Compared to this group, boys who didn't receive free/reduced price lunch performed better. Specifically, the average math score for them is 492.85, with the standard deviation as 46.34. The mean of their reading scores is 441.46, and standard deviation is 32.32.
 
-
+Similar pattern was found among girls. For those who received free/reduced price lunch, the average score of math performance is 477.51 with a standard deviation as 46.30, and the mean score of reading performance is 430.80 with a standard deviation as 27.42. Girls who didn't received free/reduced price lunch reached higher mean scores for both tasks. To be specific, the mean score of math is 501.21 and the standard deviation is 45.96. The average of reading score is 448.54, and the standard deviation is 34.52.
 
 \newpage
 
