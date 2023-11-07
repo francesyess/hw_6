@@ -2,4 +2,11 @@
 title: "hw_6"
 format: html
 editor: visual
+bibliography: references.bib
 ---
+
+## Commit 2
+
+I need to cite @R and @tidyverse
+
+Here are a few more references for your viewing pleasure [@nese2021; @gregori2022; @kratochwill2021]
